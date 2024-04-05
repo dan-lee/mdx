@@ -1,6 +1,4 @@
 /**
- * @typedef {import('@mdx-js/mdx').Fragment} Fragment
- * @typedef {import('@mdx-js/mdx').Jsx} Jsx
  * @typedef {import('mdx/types.js').MDXModule} MDXModule
  * @typedef {import('vue').Component} AnyComponent
  */
@@ -9,12 +7,8 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import {compile, run} from '@mdx-js/mdx'
 import {MDXProvider, useMDXComponents} from '@mdx-js/vue'
-import * as runtime_ from 'vue/jsx-runtime'
+import * as runtime from 'vue/jsx-runtime'
 import * as vue from 'vue'
-
-const runtime = /** @type {{Fragment: Fragment, jsx: Jsx, jsxs: Jsx}} */ (
-  /** @type {unknown} */ (runtime_)
-)
 
 // Note: a regular import would be nice but that completely messes up the JSX types.
 const name = '@vue/server-renderer'

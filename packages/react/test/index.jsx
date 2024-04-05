@@ -1,19 +1,10 @@
-/**
- * @typedef {import('@mdx-js/mdx').Fragment} Fragment
- * @typedef {import('@mdx-js/mdx').Jsx} Jsx
- */
-
 import assert from 'node:assert/strict'
 import {test} from 'node:test'
 import {evaluate} from '@mdx-js/mdx'
 import {MDXProvider, useMDXComponents} from '@mdx-js/react'
 import React from 'react'
-import * as runtime_ from 'react/jsx-runtime'
+import * as runtime from 'react/jsx-runtime'
 import {renderToString} from 'react-dom/server'
-
-const runtime = /** @type {{Fragment: Fragment, jsx: Jsx, jsxs: Jsx}} */ (
-  /** @type {unknown} */ (runtime_)
-)
 
 test('@mdx-js/react', async function (t) {
   await t.test('should expose the public api', async function () {
